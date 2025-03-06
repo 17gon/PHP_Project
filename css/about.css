@@ -1,0 +1,16 @@
+.page-content{
+    padding: 10px;
+    margin-bottom: 90%;
+    h1{
+        text-align: center;
+    }
+    a{
+        font-size: x-large;
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: blueviolet;
+    }
+}
