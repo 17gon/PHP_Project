@@ -1,4 +1,0 @@
-All task that need but not on basic pages in allThings.html, to go to it from site you must go to /form -> /thanks -> /allThings
-
-I implement 2 different calculators, and both are creative task (they are different in base)
-The theme change button also creative task 

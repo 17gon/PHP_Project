@@ -57,18 +57,15 @@ function clearDisplay() {
 }
 
 function magic() {
-  try {
     const result = eval(evalValue);
     if (isNaN(result) || result === undefined) {
-      throw new Error("Invalid Expression");
+      document.getElementById("output").value = "Error";
+      clearDisplay();
+      return
     }
     displayValue = result.toString();
     evalValue = result.toString();
     document.getElementById("output").value = displayValue;
-  } catch (error) {
-    document.getElementById("output").value = "Error";
-    clearDisplay();
-  }
 }
 
 function isOperator(char) {

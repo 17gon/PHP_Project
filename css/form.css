@@ -42,7 +42,7 @@
     }
     .consent {
       display: flex;
-      align-items: left;
+      align-items: start;
       gap: 10px;
     }
     #consent{

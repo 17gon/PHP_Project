@@ -12,19 +12,14 @@ function input(toInput) {
 }
 
 function checkInput(input) {
-    isOperator = false
-    isStackHasOperator = false
-    switch(input) {
-        case '+': isOperator = true
-        case '-': isOperator = true
-        case '*': isOperator = true
-        case '/': isOperator = true
+    let isStackHasOperator = false
+    let isOperator = false;
+    if (input === '+' || input === '-' || input === '*' || input === '/') {
+        isOperator = true
     }
-    switch(strInput.charAt(strInput.length - 1)) {
-        case '+': isStackHasOperator = true
-        case '-': isStackHasOperator = true
-        case '*': isStackHasOperator = true
-        case '/': isStackHasOperator = true
+    let s = strInput.charAt(strInput.length - 1);
+    if (s === '+' || s === '-' || s === '*' || s === '/') {
+        isStackHasOperator = true
     }
     if (isOperator && isStackHasOperator) {
         strInput = strInput.slice(0, -1)
@@ -33,7 +28,7 @@ function checkInput(input) {
 
 function backwardInput() {
     strInput = strInput.slice(0, -1);
-    toOut = strInput
+    let toOut = strInput
     if (strInput.length <= 0) {
         toOut = "0"
     }
@@ -54,19 +49,17 @@ function doTheMath() {
     outputElement.innerText = 'Error';
   }
 }
-//                                                             <!-- kreatívny bod -->
-
-//I know that was more like creating bicycle, but i want to understood how calculators actually works, and make step-by-step calculator
+//I know that was more like creating bicycle, but i want to understand how calculators actually works, and make step-by-step calculator
 function evaluateExpression(expression) {//So, this how function eval() works
     // 1. Tokenize input
-    const tokens = expression.match(/(\d+|\+|\-|\*|\/|\(|\))/g);//this replace all non numeric sybol exept math (/*-+) and digits 0-9
+    const tokens = expression.match(/(\d+|\+|-|\*|\/|\(|\))/g);//this replaces all non-numeric symbol except math (/*-+) and digits 0-9
 
     // 2. Convert to Reverse Polish Notation (RPN) using the Shunting-Yard algorithm
     const toRPN = (tokens) => {//Anonim fun
         const output = [];//It will be our output
         const operators = [];//This is operant stack, that will be added to output at the end
-        const precedence = { '+': 1, '-': 1, '*': 2, '/': 2 };//We all know, * and / more valuble than +-
-        const associativity = { '+': 'L', '-': 'L', '*': 'L', '/': 'L' }; //It wierd part, but important, it with precedence defind order and direction
+        const precedence = { '+': 1, '-': 1, '*': 2, '/': 2 };//We all know, * and / more valuable than +-
+        const associativity = { '+': 'L', '-': 'L', '*': 'L', '/': 'L' }; //It wierd part, but important, it with precedence define order and direction
 
         tokens.forEach(token => {//Go throw tokens!!!
             if (!isNaN(token)) {
@@ -86,7 +79,7 @@ function evaluateExpression(expression) {//So, this how function eval() works
                 while (operators.length && operators[operators.length - 1] !== '(') {
                     output.push(operators.pop());//Push into output expression in ()
                 }
-                operators.pop(); //Pop '(', we don't need it any more
+                operators.pop(); //Pop '(', we don't need it anymore
             }
         });
 
@@ -101,7 +94,7 @@ function evaluateExpression(expression) {//So, this how function eval() works
 
     // 3. Evaluate RPN
     const evaluateRPN = (rpn) => {
-        const stack = [];//In finnal it be result, but in process it will be like memory stack
+        const stack = [];//In final, it is result, but in process it will be like memory stack
         rpn.forEach(token => {//Token can be number (operand) or operation
             if (!isNaN(token)) {//We add numbers in stack
                 stack.push(Number(token)); //Push operand
@@ -121,5 +114,5 @@ function evaluateExpression(expression) {//So, this how function eval() works
 
     return evaluateRPN(rpn);//And there we and our eval() function
     //Postfix (or RPN) need to do math with stack, and almost all instruction on computer work like it stack
-    //I use educational exemples to make eval() function, and think more people must know how calculators actually works
+    //I use educational examples to make eval() function, and think more people must know how calculators actually works
 }
