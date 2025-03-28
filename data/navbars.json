@@ -1,0 +1,22 @@
+{
+  "main": {
+    "name": "Home",
+    "path": "main.php"
+  },
+  "all_tools": {
+    "name": "All math stuff",
+    "path": "all_tools.php"
+  },
+  "simple_calc": {
+    "name": "Simple calculator",
+    "path": "simple_calc.php"
+  },
+  "advanced_calc": {
+    "name": "Scientific calculator",
+    "path": "advanced_calc.php"
+  },
+  "placeHolder": {
+    "name": "",
+    "path": "#"
+  }
+}

@@ -4,34 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="css/mainStyle.css">
-    <link rel="stylesheet" href="css/allThings.css">
-    <script src="js/hideNavBar.js"></script>
-    <script src="js/hamburgerMenu.js"></script>
-    <script src="js/changeTheme.js"></script>
-    <script src="js/slides.js"></script>
-    <script src="js/accordion.js"></script>
+    <?php include_once "parts/linksCSSandJS.php"; getCSSandJS();?>
 </head>
 <body>
-    <nav>
-        <div id="burgerIcon"> 
-            <img src="img/hamburgerIMG.png" alt="hamburgerIMG" onclick="toggleNavBar()">
-        </div>
-        <div id="links">
-            <a href="main.html"><img src="img/icon.png" alt="" style="height: 45px;"></a>
-            <a href="main.html">Home</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-
-        <div id="changeTheme">
-            <label class="switch">
-                <input type="checkbox" onclick="changeTheme()">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </nav>
-    <header><h1>Super Calculator</h1></header>
+    <?php include "parts/header.php"; ?>
     <main class="grid-container">
         <article></article>
         <div class="mainContent">
@@ -146,23 +122,6 @@
 
     </article>
     </main>
-    <footer>
-        <div class="creators">
-            <h1> Super calculator</h1>
-            <p> &#169; Created by: Yaroslav Besschotnov</p>
-        </div>
-        <div class="about">
-            <h1>About</h1>
-            <a href="about_me.html">About me</a>
-            <a href="all_tools.html">Link to list of all tools</a>
-            <p><a href="form.html">Test form</a></p>
-        </div>
-        <div class="contancts">
-            <h1>Contact me</h1>
-            <p>Follow me</p>
-            <p><a href="mailto:yaroslav.besschotnov@gmail.com">Email: yaroslav.besschotnov@gmail.com</a></p>
-            <p><a href="tel:+000000000000">Tel: +000000000000</a></p>
-        </div>
-    </footer>
+    <?php include "parts/footer.php"; ?>
 </body>
 </html>
