@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <?php include_once "parts/linksCSSandJS.php"; getCSSandJS();?>
-</head>
+<?php include_once "parts/getHead.php"; getHead();?>
 <!-- This is place-Holder, use for makes new pages with already made design, also chrome (other also) cache this and page loaded faster  -->
 <body>
     <?php include "parts/header.php"; ?>
@@ -42,8 +37,7 @@
                 </h1>
             </div>
         </div>
-        <article>
-        </article>
+        <article></article>
     </main>
     <?php include "parts/footer.php"; ?>
 </body>

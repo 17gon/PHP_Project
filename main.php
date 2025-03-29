@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator - Main page</title>
-    <?php include_once "parts/linksCSSandJS.php"; getCSSandJS();?>
-</head>
+<?php include_once "parts/getHead.php"; getHead();?>
 <body>
     <?php include "parts/header.php"; ?>
     <main class="grid-container">
@@ -50,9 +45,7 @@
 
             </div>
         </div>
-        <article>
-
-    </article>
+        <article></article>
     </main>
     <?php include "parts/footer.php"; ?>
 </body>

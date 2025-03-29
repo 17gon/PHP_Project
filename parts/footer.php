@@ -5,9 +5,9 @@
     </div>
     <div class="about">
         <h1>About</h1>
-        <a href="about_me.html">About me</a>
-        <a href="all_tools.html">Link to list of all tools</a>
-        <p><a href="form.html">Test form</a></p>
+        <a href="about_me.php">About me</a>
+        <a href="all_tools.php">Link to list of all tools</a>
+        <p><a href="form.php">Test form</a></p>
     </div>
     <div class="contancts">
         <h1>Contact me</h1>

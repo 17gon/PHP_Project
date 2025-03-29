@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator - About me</title>
-    <link rel="stylesheet" href="css/mainStyle.css">
-    <link rel="stylesheet" href="css/aboutMe.css">
-    <script src="js/hideNavBar.js"></script>
-    <script src="js/hamburgerMenu.js"></script>
-    <script src="js/changeTheme.js"></script>
-</head>
+<?php include_once "parts/getHead.php"; getHead();?>
 <body>
     <?php include "parts/header.php"; ?>
     <main class="grid-container">
@@ -31,11 +22,8 @@
                 </p>
             </div>
         </div>
-        <article>
-
-    </article>
+        <article></article>
     </main>
-
     <?php include "parts/footer.php"; ?>
 </body>
 </html>

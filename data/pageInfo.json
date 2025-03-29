@@ -1,0 +1,124 @@
+{
+  "main": {
+    "title": "Calculator - Main page",
+    "css": [
+      "css/mainStyle.css",
+      "css/mainPage.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "all_tools": {
+    "title": "Calculator - All tools",
+    "css": [
+      "css/mainStyle.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "simple_calc": {
+    "title": "Calculator - Simple calc",
+    "css": [
+      "css/mainStyle.css",
+      "css/simpleCalc.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js",
+      "js/simpleCalculator.js"
+    ]
+  },
+  "advanced_calc": {
+    "title": "Calculator - Scientific calc",
+    "css": [
+      "css/mainStyle.css",
+      "css/advancedCalc.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js",
+      "js/advancedCalc.js"
+    ]
+  },
+  "about": {
+    "title": "Calculator - About",
+    "css": [
+      "css/mainStyle.css",
+      "css/about.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "about_me": {
+    "title": "Calculator - About me",
+    "css": [
+      "css/mainStyle.css",
+      "css/aboutMe.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "thanks": {
+    "title": "Calculator",
+    "css": [
+      "css/mainStyle.css",
+      "css/thanks.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "form": {
+    "title": "Calculator",
+    "css": [
+      "css/mainStyle.css",
+      "css/form.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
+  "allThings": {
+    "title": "Calculator",
+    "css": [
+      "css/mainStyle.css",
+      "css/allThings.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js",
+      "js/slides.js",
+      "js/accordion.js"
+    ]
+  },
+  "placeHolder": {
+    "title": "Calculator",
+    "css": [
+      "css/mainStyle.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  }
+}
