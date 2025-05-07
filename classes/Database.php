@@ -33,7 +33,7 @@ class Database {
             } else {
                 return $statement->fetch(PDO::FETCH_ASSOC);
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return $exception;
         }
     }
@@ -56,7 +56,7 @@ class Database {
                 $config['USER_NAME'],
                 $config['PASSWORD'], $options);
         } catch (PDOException $e) {
-            die("Chyba pripojenia: " . $e->getMessage());
+            die("Connection error: " . $e->getMessage());
         }
     }
 

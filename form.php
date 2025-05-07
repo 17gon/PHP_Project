@@ -8,7 +8,7 @@
         <div class="mainContent">
             <div class="page-content">
                 <div class="form">
-                    <form id="contactForm" action="thanks.php" method="POST">
+                    <form id="contactForm" action="parts/form_processing.php" method="POST">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required />
                         

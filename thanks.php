@@ -11,7 +11,7 @@
                     THANK YOU
                 </h1>
                 <p>
-                    Now site in develop stage and this feature is not available
+                    Thank you for leave your feedback :3
                 </p>
                 <p>
                     <a href="allThings.php"> All Things</a>
