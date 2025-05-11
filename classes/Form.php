@@ -30,9 +30,9 @@ class Form extends Database {
         $emailLocal = $emailSequence[0];
         $emailDomain = $emailSequence[1];
 
-        $result = $this->getOrNull($emailLocal, $emailDomain);
+        $result = $this->getOrNull($emailLocal);
         if ($result == null) {//user exist?
-            $result = $this->createUser($name, $emailLocal, $emailDomain);
+            $result = $this->createUser($name, $emailLocal);
         }
         if ($result == null) {//something went wrong?
             return http_response_code(400);
@@ -61,6 +61,7 @@ class Form extends Database {
     private function checkInput($name, $email, $text): bool {
         if ($name == "" || $email == "" || $text == "") { return false; }//not empty
         if (strlen($name)>25) { return false; }//not too long
+        if (strlen($text)>255) { return false; }
 
         $emailSequence = explode('@', $email);
         $emailLocal = $emailSequence[0];
@@ -71,21 +72,21 @@ class Form extends Database {
         return true;
     }
 
-    private function getOrNull($emailLocal, $emailDomain) {
-        $sql = 'SELECT clientID FROM client WHERE emailLocal = :emailLocal AND emailDomain = :emailDomain LIMIT 1';
+    private function getOrNull($email) {
+        $sql = 'SELECT "id" FROM "users" WHERE email = :email LIMIT 1';
         $testQuery = $this->connection->prepare($sql);
-        $params = array('emailLocal' => $emailLocal, 'emailDomain' => $emailDomain);
+        $params = array('email' => $email);
         return $this->request($testQuery, $params);
     }
 
-    private function createUser($name, $emailLocal, $emailDomain) {
-        $sqlAdd = 'INSERT INTO client (firstName, emailLocal, emailDomain) VALUES (:name, :eL, :eD)';
-        $paramsNew = array('name' => $name, 'eL' => $emailLocal, 'eD' => $emailDomain);
+    private function createUser($name, $email) {
+        $sqlAdd = 'INSERT INTO "users" (email, name) VALUES (:email, :name)';
+        $paramsNew = array('email' => $email, 'name' => $name);
         $this->request($sqlAdd, $paramsNew);
 
-        $sqlGet = 'SELECT clientID FROM client WHERE emailLocal = :eL AND emailDomain = :eD LIMIT 1';
+        $sqlGet = 'SELECT "id" FROM "users" WHERE email = :email LIMIT 1';
         $user = $this->connection->prepare($sqlGet);
-        $paramsGet = array('eL' => $emailLocal, 'eD' => $emailDomain);
+        $paramsGet = array('email' => $email);
 
         return $this->request($paramsGet, $sqlGet)[1];//first hasn't result
     }

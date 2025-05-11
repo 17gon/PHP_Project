@@ -20,13 +20,12 @@ class CreateReadUpdateDelete extends Database{
     }
 
     public function create($content) {
-        $sql = '';
+        $sql = 'INSERT INTO "crud" ("value") VALUES :content';
 
         $result = $this->request($sql, array("content" => $content));
     }
     public function read(): string {
-        $sql = '';
-
+        $sql = 'SELECT * FROM "crud" WHERE;';
         $result = $this->request($sql, null, true);
         $out = "<table> <tr><th>ID</th><th>Content</th></tr>";
         foreach($result as $row){
@@ -38,14 +37,12 @@ class CreateReadUpdateDelete extends Database{
         $out .= "</table>";
         return $out;
     }
-
     public function update($id, $content) {
-        $sql = '';
+        $sql = 'UPDATE "crud" SET "value" = :content WHERE "id" = :id;';
         $result = $this->request($sql, array("content" => $content, "id" => $id));
     }
-
     public function delete($id) {
-        $sql = '';
+        $sql = 'DELETE FROM "crud" WHERE "id" = :id;';
 
         $result = $this->request($sql, array('id' => $id));
     }
