@@ -112,6 +112,7 @@
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
+            <?php include "parts/crud_body.php" ?>
         </div>
         <article></article>
     </main>

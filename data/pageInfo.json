@@ -84,6 +84,18 @@
       "js/changeTheme.js"
     ]
   },
+  "ups": {
+    "title": "Calculator",
+    "css": [
+      "css/mainStyle.css",
+      "css/thanks.css"
+    ],
+    "js": [
+      "js/hideNavBar.js",
+      "js/hamburgerMenu.js",
+      "js/changeTheme.js"
+    ]
+  },
   "form": {
     "title": "Calculator",
     "css": [
@@ -96,7 +108,7 @@
       "js/changeTheme.js"
     ]
   },
-  "allThings": {
+  "allthings": {
     "title": "Calculator",
     "css": [
       "css/mainStyle.css",

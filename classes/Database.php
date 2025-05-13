@@ -1,5 +1,4 @@
 <?php
-
 require_once(__ROOT__.'/dataBase/config.php');
 
 class Database {
@@ -33,7 +32,7 @@ class Database {
                 return $statement->fetch(PDO::FETCH_ASSOC);
             }
         } catch (Exception $exception) {
-            return $exception;
+                return $exception;
         }
     }
 

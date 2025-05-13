@@ -1,9 +1,9 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
+define('__ROOT__', dirname(__FILE__, 2));
 
-require_once(__ROOT__."/Database.php");
-require_once(__ROOT__ . '/config.php');
+require_once(__ROOT__."/classes/Database.php");
+require_once(__ROOT__ . '/dataBase/config.php');
 
 class CreateReadUpdateDelete extends Database{
     private $connection;
@@ -14,35 +14,33 @@ class CreateReadUpdateDelete extends Database{
         $this->connection = $this->getConnection();
     }
 
-
     public function __destruct() {
         $this->connection = null;
     }
 
-    public function create($content) {
-        $sql = 'INSERT INTO "crud" ("value") VALUES :content';
+    public function create($value) {
+        $sql = 'INSERT INTO crud (value) VALUES (:value)';
 
-        $result = $this->request($sql, array("content" => $content));
+        $result = $this->request($sql, array("value" => $value));
     }
     public function read(): string {
-        $sql = 'SELECT * FROM "crud" WHERE;';
+        $sql = 'SELECT * FROM crud WHERE 1;';
         $result = $this->request($sql, null, true);
-        $out = "<table> <tr><th>ID</th><th>Content</th></tr>";
+        $out = "<table> <tr><th>ID</th><th>value</th></tr>";
         foreach($result as $row){
             $id = $row['id'];
-            $content = $row['content'];
-            $out.="<tr><td>".$id."</td><td>".$content."</td></tr>";
-
+            $value = $row['value'];
+            $out.="<tr><td>".$id."</td><td>".$value."</td></tr>";
         }
         $out .= "</table>";
         return $out;
     }
-    public function update($id, $content) {
-        $sql = 'UPDATE "crud" SET "value" = :content WHERE "id" = :id;';
-        $result = $this->request($sql, array("content" => $content, "id" => $id));
+    public function update($id, $value) {
+        $sql = 'UPDATE crud SET value = :value WHERE id = :id;';
+        $result = $this->request($sql, array("value" => $value, "id" => $id));
     }
     public function delete($id) {
-        $sql = 'DELETE FROM "crud" WHERE "id" = :id;';
+        $sql = 'DELETE FROM crud WHERE id = :id;';
 
         $result = $this->request($sql, array('id' => $id));
     }

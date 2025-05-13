@@ -14,7 +14,7 @@
                     Thank you for leave your feedback :3
                 </p>
                 <p>
-                    <a href="allThings.php"> All Things</a>
+                    <a href="allthings.php"> All Things</a>
                 </p>
             </div>
         </div>
